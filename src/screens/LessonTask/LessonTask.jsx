@@ -2,7 +2,7 @@ import { useState } from 'react'
 import ScreenShell from '../../components/ScreenShell'
 import PrimaryButton from '../../components/PrimaryButton'
 import { saveMistake, markCorrect } from '../../lib/mistakes'
-import './lessonTask.css'
+import './LessonTask.css'
 
 export default function LessonTask({ tasks, onBack, onFinish }) {
   const [index, setIndex] = useState(0)

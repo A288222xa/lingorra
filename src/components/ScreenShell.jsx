@@ -1,4 +1,4 @@
-import './screenShell.css'
+import './ScreenShell.css'
 
 export default function ScreenShell({ onBack, children, className = '' }) {
   return (
