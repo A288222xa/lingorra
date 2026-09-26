@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+}
+
+.your-level-screen {
+  position: relative;
+  width: 393px;
+  height: 852px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #f5f0e7;
+  color: #000;
+  font-family: 'Manrope', sans-serif;
+}
+
+/* =========================
+   BACK ARROW
+========================= */
+
+.your-level-back {
+  position: absolute;
+  left: 35px;
+  top: 47px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #33271f;
+  font-family: 'Manrope', sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.your-level-title {
+  position: absolute;
+  top: 114px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  text-align: center;
+
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: #000;
+}
+
+/* =========================
+   A2
+========================= */
+
+.start-lesson__logo {
+  position: absolute;
+  left: 50%;
+  top:0;
+
+  transform: translateX(-50%);
+
+  font-family: 'Manrope', sans-serif;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.63px;
+
+  color: #33271f;
+  white-space: nowrap;
+}
+.your-level-a2 {
+  position: absolute;
+  top: 193px;
+  left: 0;
+  right: 0;
+
+  text-align: center;
+
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: 500;
+  color: #70775a;
+}
+
+/* =========================
+   LEVEL NAME
+========================= */
+
+.your-level-name {
+  position: absolute;
+  top: 280px;
+  left: 0;
+  right: 0;
+
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: #000;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.your-level-description {
+  position: absolute;
+  top: 350px;
+  left: 20px;
+  right: 20px;
+
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #70775a;
+}
+
+/* =========================
+   PLANT
+========================= */
+
+.your-level-plant {
+  position: absolute;
+  left: 131px;
+  top: 443px;
+  width: 130px;
+  height: 155px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.your-level-plant svg {
+  display: block;
+}
+
+/* =========================
+   JOURNEY TEXT
+========================= */
+
+.your-level-journey {
+  position: absolute;
+  top: 648px;
+  left: 0;
+  right: 0;
+
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #000;
+}
+
+/* =========================
+   START BUTTON
+========================= */
+
+.your-level-start {
+  position: absolute;
+  left: 64px;
+  top: 712px;
+
+  width: 265px;
+  height: 57px;
+
+  padding: 0;
+  border: none;
+  border-radius: 13px;
+
+  background: #33271f;
+  color: white;
+
+  font-family: 'Manrope', sans-serif;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.your-level-start span {
+  position: relative;
+  left: -12px;
+
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.your-level-arrow {
+  position: absolute;
+  right: 45px;
+  top: 20px;
+}
+
+/* =========================
+   HOME INDICATOR
+========================= */
+
+.your-level-home-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+
+  width: 134px;
+  height: 5px;
+
+  transform: translateX(-50%);
+
+  border-radius: 100px;
+  background: #000;
+}
+
+.your-level-home-indicator div {
+  width: 100%;
+  height: 100%;
+}

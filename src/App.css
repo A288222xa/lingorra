@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #F5F0E7;
+  font-family: 'Manrope', sans-serif;
+  color: #33271F;
+}
+
+/* =========================
+   MAIN SCREEN
+   ========================= */
+
+.welcome {
+  position: relative;
+
+  width: 100%;
+  max-width: 393px;
+  height: 852px;
+  margin: 0 auto;
+
+  background: #F5F0E7;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   LOGO
+   ========================= */
+
+.logo {
+  position: absolute;
+
+  left: 153px;
+  top:55px;
+
+  margin: 0;
+
+  font-family: 'Manrope', sans-serif;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.63px;
+
+  color: #33271F;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   TITLE
+   ========================= */
+
+.title {
+  position: absolute;
+
+  left: 121px;
+  top: 163px;
+
+  margin: 0;
+}
+
+.title p {
+  margin: 0;
+
+  font-family: 'Manrope', sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.63px;
+
+  white-space: nowrap;
+}
+
+.title-main {
+  color: #33271F;
+}
+
+.title-accent {
+  margin-top: 12px !important;
+  color: #70775A;
+}
+
+
+/* =========================
+   PLANT
+   ========================= */
+
+.plant {
+  position: absolute;
+
+  left: 142px;
+  top: 306px;
+
+  width: 111.123px;
+  height: 199.457px;
+}
+
+.plant img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+/* =========================
+   DESCRIPTION
+   ========================= */
+
+.description {
+  position: absolute;
+
+  left: 76px;
+  top: 554px;
+
+  margin: 0;
+
+  font-family: 'Manrope', sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.63px;
+
+  color: #4B4841;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   START BUTTON
+   ========================= */
+
+.start-button {
+  position: absolute;
+
+  left: 75px;
+  top: 643px;
+
+  width: 248px;
+  height: 55px;
+
+  border-radius: 13px;
+
+  background: #33271F;
+}
+
+
+/* Button text */
+
+.start-button-text {
+  position: absolute;
+
+  left: 0;
+  top: 16px;
+
+  width: 211px;
+
+  margin: 0;
+
+  font-family: 'Manrope', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.34px;
+
+  color: #F5F0E7;
+
+  text-align: center;
+  white-space: nowrap;
+}
+
+
+/* Arrow */
+
+.arrow {
+  position: absolute;
+  right: 40px;
+  top: 17px;
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
+}
+
+
+/* =========================
+   BOTTOM INFORMATION
+   ========================= */
+
+.bottom-info {
+  position: absolute;
+
+  left: 95px;
+  top: 775px;
+
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+
+  white-space: nowrap;
+}
+
+.bottom-info p {
+  margin: 0;
+
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.45px;
+
+  color: rgba(112, 119, 90, 0.5);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+
+  margin-left: 7px;
+  margin-right: 10px;
+
+  object-fit: contain;
+}
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.level-screen {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+   TELEGRAM / SMALL SCREENS
+   ========================= */
+
+@media (max-width: 393px) {
+  .welcome {
+    width: 100%;
+  }
+}

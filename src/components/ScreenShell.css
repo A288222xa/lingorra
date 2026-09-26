@@ -1,0 +1,50 @@
+.screen {
+  position: relative;
+  max-width: 393px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: var(--bg);
+  font-family: var(--font);
+  color: var(--text);
+  overflow: hidden;
+}
+
+.screen__header {
+  position: relative;
+  padding-top: 55px;
+  text-align: center;
+}
+
+.screen__logo {
+  font-size: 21px;
+  font-weight: 300;
+  letter-spacing: 0.63px;
+}
+
+.screen__back {
+  position: absolute;
+  left: 20px;
+  top: 50px;
+  border: 0;
+  background: none;
+  font-size: 22px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.screen__home-indicator {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.screen__home-indicator div {
+  width: 134px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--text);
+  opacity: 0.85;
+}

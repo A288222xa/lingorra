@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+}
+
+.goodbye-screen {
+  position: relative;
+  width: 393px;
+  height: 852px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #f5f0e7;
+  color: #33271f;
+  font-family: 'Manrope', sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.goodbye-header {
+  position: absolute;
+  top: 47px;
+  left: 35px;
+  right: 35px;
+  height: 32px;
+}
+
+.goodbye-logo {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+
+  font-family: 'Manrope', sans-serif;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.63px;
+
+  color: #33271f;
+  white-space: nowrap;
+}
+
+.goodbye-back {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 32px;
+  height: 32px;
+
+  padding: 0;
+  margin: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #33271f;
+  font-family: 'Manrope', sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 32px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.goodbye-title {
+  position: absolute;
+  top: 130px;
+  left: 30px;
+  right: 30px;
+
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #000;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.goodbye-description {
+  position: absolute;
+  top: 240px;
+  left: 40px;
+  right: 40px;
+
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 17px;
+  line-height: 25px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  color: #70775a;
+}
+
+.goodbye-soon {
+  position: absolute;
+  top: 340px;
+  left: 40px;
+  right: 40px;
+
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 17px;
+  line-height: 25px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: #33271f;
+}
+
+/* =========================
+   PLANT
+========================= */
+
+.goodbye-plant {
+  position: absolute;
+  left: 50%;
+  top: 443px;
+  width: 130px;
+  height: 155px;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.goodbye-plant svg {
+  display: block;
+}
+
+/* =========================
+   BACK TO START BUTTON
+========================= */
+
+.goodbye-start {
+  position: absolute;
+  left: 64px;
+  top: 712px;
+
+  width: 265px;
+  height: 57px;
+
+  padding: 0;
+  border: none;
+  border-radius: 13px;
+
+  background: #33271f;
+  color: white;
+
+  font-family: 'Manrope', sans-serif;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.goodbye-start:active {
+  transform: scale(0.99);
+}
+
+.goodbye-start span {
+  position: relative;
+  left: -12px;
+
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.goodbye-arrow {
+  position: absolute;
+  right: 45px;
+  top: 20px;
+}
+
+/* =========================
+   HOME INDICATOR
+========================= */
+
+.goodbye-home-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+
+  width: 134px;
+  height: 5px;
+
+  transform: translateX(-50%);
+
+  border-radius: 100px;
+  background: #000;
+}

@@ -1,0 +1,65 @@
+import './App.css'
+
+const assetPathPrefix =
+  'https://www.figma.com/api/mcp/asset/a4c3ae12-9379-4020-bb91-c63454009f31'
+
+const plantImage = `${assetPathPrefix}/29ba9.svg`
+const arrowImage = `${assetPathPrefix}/af9b2.svg`
+const ellipseImage = `${assetPathPrefix}/60557.svg`
+
+function Welcome() {
+  return (
+    <main className="welcome">
+
+      {/* Logo */}
+      <p className="logo">
+        Lingorra.
+      </p>
+
+      {/* Main title */}
+      <div className="title">
+        <p className="title-main">
+          Learn English.
+        </p>
+
+        <p className="title-accent">
+          Build yourself.
+        </p>
+      </div>
+
+      {/* Plant */}
+      <div className="plant">
+        <img
+          src={plantImage}
+          alt=""
+        />
+      </div>
+
+      {/* Description */}
+      <p className="description">
+        Your journey starts here
+      </p>
+
+      {/* Start button */}
+      <div className="start-button">
+        <p className="start-button-text">
+          Start your journey
+        </p>
+
+        <img
+          className="arrow"
+          src={arrowImage}
+          alt=""
+        />
+      </div>
+
+      <div className="bottom-info">
+  <span className="bottom-text">Free to start</span>
+  <span className="bottom-dot">•</span>
+  <span className="bottom-text">10 min a day</span>
+</div>
+    </main>
+  )
+}
+
+export default Welcome
