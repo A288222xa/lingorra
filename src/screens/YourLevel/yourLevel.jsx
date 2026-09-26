@@ -1,12 +1,16 @@
 import './yourLevel.css'
+import { levels } from '../../data/testQuestions'
 
-function YourLevel({ onBack, onStart }) {
+function YourLevel({ level, onBack, onStart }) {
+  const shownLevel = level || levels[1]
+
   return (
     <main className="your-level-screen">
 
-<div className="start-lesson__logo">
-  Lingorra.
-</div>
+      <div className="start-lesson__logo">
+        Lingorra.
+      </div>
+
       <button
         type="button"
         className="your-level-back"
@@ -21,17 +25,15 @@ function YourLevel({ onBack, onStart }) {
       </h1>
 
       <div className="your-level-a2">
-        A2
+        {shownLevel.cefr}
       </div>
 
       <h2 className="your-level-name">
-        Elementary English
+        {shownLevel.name}
       </h2>
 
       <p className="your-level-description">
-        You can understand simple sentences
-        <br />
-        and everyday phrases.
+        {shownLevel.description}
       </p>
 
       <div className="your-level-plant">

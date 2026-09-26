@@ -9,7 +9,7 @@ import YourLevel from './screens/YourLevel/yourLevel'
 import StartLesson from './screens/StartLesson/startLesson'
 import LessonTask from './screens/LessonTask/LessonTask'
 import Goodbye from './screens/Goodbye/Goodbye'
-import { testQuestions } from './data/testQuestions'
+import { getLessonForLevel } from './data/lessons'
 
 const assetPathPrefix =
   'https://www.figma.com/api/mcp/asset/a4c3ae12-9379-4020-bb91-c63454009f31'
@@ -61,6 +61,7 @@ function Welcome({ onStart }) {
 
 function App() {
   const [screen, setScreen] = useState(1)
+  const [level, setLevel] = useState(null)
 
   // 1 — Welcome
   if (screen === 1) {
@@ -71,7 +72,7 @@ function App() {
     )
   }
 
-  // 2 — Choose your level
+  // 2 — Choose your starting point
   if (screen === 2) {
     return (
       <Level
@@ -91,12 +92,15 @@ function App() {
     )
   }
 
-  // 4 — Level Test
+  // 4 — Level Test (30 questions, computes the level)
   if (screen === 4) {
     return (
       <LevelTest
         onBack={() => setScreen(3)}
-        onContinue={() => setScreen(5)}
+        onContinue={(computedLevel) => {
+          setLevel(computedLevel)
+          setScreen(5)
+        }}
       />
     )
   }
@@ -105,16 +109,18 @@ function App() {
   if (screen === 5) {
     return (
       <YourLevel
+        level={level}
         onBack={() => setScreen(4)}
         onStart={() => setScreen(6)}
       />
     )
   }
 
-  // 6 — Start lesson
+  // 6 — Start lesson (lesson picked automatically based on level)
   if (screen === 6) {
     return (
       <StartLesson
+        level={level}
         onBack={() => setScreen(5)}
         onStart={() => setScreen(7)}
       />
@@ -125,7 +131,7 @@ function App() {
   if (screen === 7) {
     return (
       <LessonTask
-        tasks={testQuestions.slice(0, 5)}
+        lesson={getLessonForLevel(level)}
         onBack={() => setScreen(6)}
         onFinish={() => setScreen(8)}
       />

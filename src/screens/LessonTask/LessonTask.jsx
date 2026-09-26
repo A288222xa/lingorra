@@ -4,11 +4,12 @@ import PrimaryButton from '../../components/PrimaryButton'
 import { saveMistake, markCorrect } from '../../lib/mistakes'
 import './LessonTask.css'
 
-export default function LessonTask({ tasks, onBack, onFinish }) {
+export default function LessonTask({ lesson, onBack, onFinish }) {
   const [index, setIndex] = useState(0)
   const [selected, setSelected] = useState(null)
   const [checked, setChecked] = useState(false)
 
+  const tasks = lesson.tasks
   const task = tasks[index]
   const isLast = index === tasks.length - 1
 
@@ -30,7 +31,7 @@ export default function LessonTask({ tasks, onBack, onFinish }) {
 
   return (
     <ScreenShell onBack={onBack} className="lesson">
-      <h1 className="lesson__title">Everyday English</h1>
+      <h1 className="lesson__title">{lesson.name}</h1>
       <p className="lesson__subtitle">Choose the correct answer.</p>
 
       <p className="lesson__question">

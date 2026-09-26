@@ -7,7 +7,6 @@ const assetPathPrefix =
 const treeImage = `${assetPathPrefix}/44001.svg`
 const bigSproutImage = `${assetPathPrefix}/ee246.svg`
 const sproutImage = `${assetPathPrefix}/4499f.svg`
-const arrowImage = `${assetPathPrefix}/9f779.svg`
 
 function Level({ onBack, onContinue }) {
   const [selectedLevel, setSelectedLevel] = useState(null)
@@ -40,7 +39,7 @@ function Level({ onBack, onContinue }) {
           </h1>
 
           <p>
-            Let’s find the right place to begin,
+            Let's find the right place to begin,
           </p>
         </div>
 
@@ -61,7 +60,7 @@ function Level({ onBack, onContinue }) {
 
             <div className="level-card-text">
               <div className="level-card-title">
-                I’m just starting
+                I'm just starting
               </div>
 
               <div className="level-card-description">
@@ -135,7 +134,10 @@ function Level({ onBack, onContinue }) {
 
       <button
         type="button"
-        className="level-continue"
+        className={`level-continue ${
+          selectedLevel === null ? 'disabled' : ''
+        }`}
+        disabled={selectedLevel === null}
         onClick={onContinue}
       >
         <span>Continue</span>
