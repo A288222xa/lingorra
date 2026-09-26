@@ -1,16 +1,33 @@
 import { useState } from 'react'
 
 import './levelTest.css'
+import { testQuestions, calcLevel } from '../../data/testQuestions'
 
 function LevelTest({ onBack, onContinue }) {
+  const [index, setIndex] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
+  const [correctWeight, setCorrectWeight] = useState(0)
+  const [totalWeight, setTotalWeight] = useState(0)
 
-  const answers = [
-    'drink',
-    'drinks',
-    'drinking',
-    'is drink',
-  ]
+  const question = testQuestions[index]
+  const isLast = index === testQuestions.length - 1
+
+  const handleContinue = () => {
+    const isCorrect = selectedAnswer === question.answer
+    const nextCorrectWeight = correctWeight + (isCorrect ? question.weight : 0)
+    const nextTotalWeight = totalWeight + question.weight
+
+    if (isLast) {
+      const level = calcLevel(nextCorrectWeight, nextTotalWeight)
+      onContinue(level)
+      return
+    }
+
+    setCorrectWeight(nextCorrectWeight)
+    setTotalWeight(nextTotalWeight)
+    setIndex((i) => i + 1)
+    setSelectedAnswer(null)
+  }
 
   return (
     <main className="level-test-screen">
@@ -46,26 +63,31 @@ function LevelTest({ onBack, onContinue }) {
 
       {/* QUESTION */}
       <div className="level-test-question">
-  She <span className="question-blank">???</span> coffee every morning.
-</div>
+        {question.text.split('___').map((part, i, arr) => (
+          <span key={i}>
+            {part}
+            {i < arr.length - 1 && <span className="question-blank">???</span>}
+          </span>
+        ))}
+      </div>
 
       {/* ANSWERS */}
       <div className="level-test-answers">
-        {answers.map((answer, index) => (
+        {question.options.map((option, i) => (
           <button
-            key={answer}
+            key={question.id + i}
             type="button"
             className={`level-test-answer ${
-              selectedAnswer === index ? 'selected' : ''
+              selectedAnswer === i ? 'selected' : ''
             }`}
-            onClick={() => setSelectedAnswer(index)}
+            onClick={() => setSelectedAnswer(i)}
           >
             <span className="answer-number">
-              {index + 1}
+              {i + 1}
             </span>
 
             <span className="answer-text">
-              {answer}
+              {option}
             </span>
           </button>
         ))}
@@ -73,7 +95,7 @@ function LevelTest({ onBack, onContinue }) {
 
       {/* QUESTION NUMBER */}
       <div className="level-test-counter">
-        Question 1 of 10
+        Question {index + 1} of {testQuestions.length}
       </div>
 
       {/* CONTINUE */}
@@ -83,9 +105,9 @@ function LevelTest({ onBack, onContinue }) {
           selectedAnswer === null ? 'disabled' : ''
         }`}
         disabled={selectedAnswer === null}
-          onClick={onContinue}
+        onClick={handleContinue}
       >
-        <span>Continue</span>
+        <span>{isLast ? 'See my level' : 'Continue'}</span>
         <span className="level-test-arrow">
           →
         </span>
