@@ -1,7 +1,14 @@
 const KEY = 'lingorra_mistakes'
 
-// Интервалы повторения по "коробкам" Лейтнера: 1 день, 3, 7, 14
-const INTERVALS = [0, 86400000, 259200000, 604800000, 1209600000]
+// 1 день → 3 дня → 7 дней → 14 дней
+const INTERVALS = [
+  0,
+  86400000,
+  259200000,
+  604800000,
+  1209600000,
+]
+
 
 export function loadMistakes() {
   try {
@@ -11,31 +18,79 @@ export function loadMistakes() {
   }
 }
 
-// Пользователь ошибся → сохраняем/сбрасываем коробку на 1
-export function saveMistake({ id, prompt, correct }) {
+
+// ------------------------------------------
+// SAVE MISTAKE
+// ------------------------------------------
+
+export function saveMistake({
+  id,
+  prompt,
+  correct,
+  level,
+  translation,
+}) {
   const list = loadMistakes()
-  const existing = list.find((m) => m.id === id)
+
+  const existing = list.find((mistake) => mistake.id === id)
+
   if (existing) {
     existing.box = 1
     existing.ts = Date.now()
   } else {
-    list.push({ id, prompt, correct, box: 1, ts: Date.now() })
+    list.push({
+      id,
+      prompt,
+      correct,
+      level,
+      translation,
+      box: 1,
+      ts: Date.now(),
+    })
   }
+
   localStorage.setItem(KEY, JSON.stringify(list))
 }
 
-// Ответил верно → повышаем коробку; выше 4 — ошибка "выучена", удаляем
+
+// ------------------------------------------
+// ANSWERED CORRECTLY
+// ------------------------------------------
+
 export function markCorrect(id) {
   const list = loadMistakes()
-  const m = list.find((x) => x.id === id)
-  if (!m) return
-  m.box += 1
-  m.ts = Date.now()
-  const next = m.box > 4 ? list.filter((x) => x.id !== id) : list
-  localStorage.setItem(KEY, JSON.stringify(next))
+
+  const mistake = list.find(
+    (item) => item.id === id
+  )
+
+  if (!mistake) return
+
+  mistake.box += 1
+  mistake.ts = Date.now()
+
+  const next =
+    mistake.box > 4
+      ? list.filter((item) => item.id !== id)
+      : list
+
+  localStorage.setItem(
+    KEY,
+    JSON.stringify(next)
+  )
 }
 
-// Ошибки, которые пора показать снова
-export function dueMistakes(now = Date.now()) {
-  return loadMistakes().filter((m) => now - m.ts >= INTERVALS[m.box])
+
+// ------------------------------------------
+// MISTAKES THAT ARE DUE
+// ------------------------------------------
+
+export function dueMistakes(
+  now = Date.now()
+) {
+  return loadMistakes().filter(
+    (mistake) =>
+      now - mistake.ts >=
+      INTERVALS[mistake.box]
+  )
 }

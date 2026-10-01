@@ -112,7 +112,7 @@
 .level-test-question {
   position: absolute;
 
-  top: 270px;
+  top: 255px;
   left: 30px;
   right: 30px;
 
@@ -125,13 +125,30 @@
 
   color: #33271f;
 }
+/* RUSSIAN TRANSLATION */
 
+.level-test-translation {
+  position: absolute;
+
+  top: 298px;
+  left: 40px;
+  right: 40px;
+
+  text-align: center;
+
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+
+  color: rgba(112, 119, 90, 0.75);
+}
 /* ANSWERS */
 
 .level-test-answers {
   position: absolute;
 
-  top: 345px;
+  top: 355px;
   left: 30px;
 
   width: 333px;
