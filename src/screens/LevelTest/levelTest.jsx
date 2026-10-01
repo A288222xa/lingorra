@@ -3,7 +3,7 @@ import { useState } from 'react'
 import './levelTest.css'
 
 import { testQuestions, calcLevel } from '../../data/testQuestions'
-import { saveMistake, markCorrect } from '../../data/mistake'
+import { saveMistake, markCorrect } from '../../data/mistakes'
 
 
 function LevelTest({ onBack, onContinue }) {
