@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import ScreenShell from '../../components/ScreenShell'
 import PrimaryButton from '../../components/PrimaryButton'
-import { saveMistake, markCorrect } from '../../lib/mistakes'
+import { saveMistake, markCorrect } from '../../data/mistakes'
 import './LessonTask.css'
 
 export default function LessonTask({ lesson, onBack, onFinish }) {

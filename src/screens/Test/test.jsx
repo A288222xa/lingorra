@@ -1,20 +1,12 @@
 import './test.css'
-
-const assetPathPrefix =
-  'https://www.figma.com/api/mcp/asset/3bb2e892-e47b-4999-ac5b-43fe8b5cadd2'
-
-const flowerImage = `${assetPathPrefix}/4683b.svg`
-const nameImage = `${assetPathPrefix}/5bc02.svg`
+import { Flower } from '../../components/illustrations'
 
 function Test({ onBack, onStart }) {
   return (
     <main className="test-screen">
 
-      {/* HEADER */}
       <header className="test-header">
-        <div className="test-logo">
-          Lingorra.
-        </div>
+        <div className="test-logo">Lingurra.</div>
 
         <button
           type="button"
@@ -26,7 +18,6 @@ function Test({ onBack, onStart }) {
         </button>
       </header>
 
-      {/* TITLE */}
       <div className="test-title-box">
         <h1>
           Let's find your
@@ -35,7 +26,6 @@ function Test({ onBack, onStart }) {
         </h1>
       </div>
 
-      {/* DESCRIPTION */}
       <p className="test-description">
         Answer 10 short questions
         <br />
@@ -44,31 +34,16 @@ function Test({ onBack, onStart }) {
         point.
       </p>
 
-      {/* FLOWER */}
       <div className="test-flower">
-        <img
-          src={flowerImage}
-          alt=""
-        />
+        <Flower />
       </div>
 
-      {/* START BUTTON */}
-      <button
-        type="button"
-        className="test-start-button"
-        onClick={onStart}
-      >
+      <button type="button" className="test-start-button" onClick={onStart}>
         <span>Start test</span>
-
-        <span className="test-start-arrow">
-          →
-        </span>
+        <span className="test-start-arrow">→</span>
       </button>
 
-      {/* HOME INDICATOR */}
-      <div className="test-home-indicator">
-        <div />
-      </div>
+      <div className="test-home-indicator" />
 
     </main>
   )
