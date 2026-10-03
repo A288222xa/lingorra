@@ -88,6 +88,8 @@ function LevelTest({ startLevel, onBack, onContinue }) {
       </div>
 
 
+      <div className="level-test-body">
+
       <div className="level-test-question">
         {question.text.split('___').map((part, i, arr) => (
           <span key={i}>
@@ -117,6 +119,8 @@ function LevelTest({ startLevel, onBack, onContinue }) {
             <span className="answer-text">{option}</span>
           </button>
         ))}
+      </div>
+
       </div>
 
 

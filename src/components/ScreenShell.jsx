@@ -4,7 +4,7 @@ export default function ScreenShell({ onBack, children, className = '' }) {
   return (
     <main className={`screen ${className}`}>
       <header className="screen__header">
-        <div className="screen__logo">Lingorra.</div>
+        <div className="screen__logo">Lingurra.</div>
         {onBack && (
           <button type="button" className="screen__back" onClick={onBack} aria-label="Go back">
             ←

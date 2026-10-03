@@ -23,15 +23,12 @@
   height: 32px;
 }
 
-/* LOGO */
-
 .level-test-logo {
   position: absolute;
   left: 50%;
   top: 0;
   transform: translateX(-50%);
 
-  font-family: 'Manrope', sans-serif;
   font-size: 21px;
   font-weight: 300;
   line-height: 1;
@@ -41,8 +38,6 @@
   white-space: nowrap;
 }
 
-/* BACK */
-
 .level-test-back {
   position: absolute;
   left: 0;
@@ -50,7 +45,6 @@
 
   width: 32px;
   height: 32px;
-
   padding: 0;
   margin: 0;
 
@@ -74,21 +68,18 @@
 
 .level-test-title {
   position: absolute;
-  top: 119px;
+  top: 100px;
   left: 30px;
   right: 30px;
-
   text-align: center;
 }
 
 .level-test-title h1 {
   margin: 0;
-
-  font-size: 30px;
+  font-size: 28px;
   line-height: 1.2;
   font-weight: 600;
   letter-spacing: 0.9px;
-
   color: #33271f;
 }
 
@@ -97,83 +88,79 @@
 }
 
 .level-test-title p {
-  margin: 18px 0 0;
-
+  margin: 10px 0 0;
   font-size: 15px;
   line-height: 22px;
   font-weight: 300;
   letter-spacing: 0.45px;
-
   color: rgba(112, 119, 90, 0.7);
 }
 
-/* QUESTION */
+/* BODY: вопрос → перевод → ответы идут друг за другом,
+   поэтому длинное предложение больше ничего не перекрывает */
 
-.level-test-question {
+.level-test-body {
   position: absolute;
-
-  top: 255px;
+  top: 230px;
   left: 30px;
   right: 30px;
-
-  font-size: 22px;
-  line-height: 30px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-
-  text-align: center;
-
-  color: #33271f;
-}
-/* RUSSIAN TRANSLATION */
-
-.level-test-translation {
-  position: absolute;
-
-  top: 298px;
-  left: 40px;
-  right: 40px;
-
-  text-align: center;
-
-  font-size: 13px;
-  line-height: 20px;
-  font-weight: 300;
-  letter-spacing: 0.3px;
-
-  color: rgba(112, 119, 90, 0.75);
-}
-/* ANSWERS */
-
-.level-test-answers {
-  position: absolute;
-
-  top: 355px;
-  left: 30px;
-
-  width: 333px;
+  bottom: 190px;
 
   display: flex;
   flex-direction: column;
-  gap: 12px;
 }
 
-/* ANSWER */
+.level-test-question {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #33271f;
+}
+
+.question-blank {
+  color: #70775a;
+}
+
+/* Русский перевод */
+.level-test-translation {
+  margin-top: 8px;
+  padding: 0 6px;
+
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  text-align: center;
+
+  color: #70775a;
+}
+
+/* ANSWERS */
+
+.level-test-answers {
+  margin-top: auto;           /* ответы прижаты книзу, над счётчиком */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 .level-test-answer {
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 
-  width: 333px;
-  height: 60px;
-
-  padding: 0;
+  width: 100%;
+  height: 52px;
+  padding: 0 18px;
 
   border: 1px solid rgba(51, 39, 31, 0.15);
   border-radius: 15px;
-
   background: transparent;
 
   font-family: 'Manrope', sans-serif;
+  text-align: left;
 
   cursor: pointer;
 
@@ -196,55 +183,36 @@
   background: rgba(112, 119, 90, 0.08);
 }
 
-/* NUMBER */
-
 .answer-number {
-  position: absolute;
-
-  left: 18px;
-  top: 18px;
-
+  flex: none;
   width: 24px;
   height: 24px;
-
   border-radius: 50%;
 
   font-size: 12px;
   line-height: 24px;
   font-weight: 400;
-
   text-align: center;
 
   color: #70775a;
   background: rgba(112, 119, 90, 0.1);
 }
 
-/* TEXT */
-
 .answer-text {
-  position: absolute;
-
-  left: 60px;
-  top: 17px;
-
   font-size: 16px;
-  line-height: 26px;
+  line-height: 24px;
   font-weight: 400;
   letter-spacing: 0.48px;
-
   color: #33271f;
 }
-.question-blank {
-  color: #70775a;
-}
+
 /* COUNTER */
 
 .level-test-counter {
   position: absolute;
-
   left: 0;
   right: 0;
-  top: 635px;
+  top: 676px;
 
   text-align: center;
 
@@ -260,13 +228,11 @@
 
 .level-test-continue {
   position: absolute;
-
   left: 64px;
-  top: 680px;
+  top: 712px;
 
   width: 265px;
   height: 57px;
-
   padding: 0;
 
   border: none;
@@ -293,11 +259,8 @@
   transform: scale(0.99);
 }
 
-/* ARROW */
-
 .level-test-arrow {
   position: absolute;
-
   right: 45px;
   top: 17px;
 
@@ -315,7 +278,6 @@
 
 .level-test-home-indicator {
   position: absolute;
-
   left: 50%;
   bottom: 8px;
 
@@ -325,6 +287,5 @@
   transform: translateX(-50%);
 
   border-radius: 100px;
-
   background: #000;
 }

@@ -4,23 +4,20 @@ import './App.css'
 
 import Level from './screens/Level/level'
 import Test from './screens/Test/test'
-import LevelTest from './screens/LevelTest/levelTest'
+import LevelTest from './screens/Leveltest/leveltest'
 import YourLevel from './screens/YourLevel/yourLevel'
 import StartLesson from './screens/StartLesson/startLesson'
 import LessonTask from './screens/LessonTask/LessonTask'
 import Goodbye from './screens/Goodbye/Goodbye'
 import { getLessonForLevel } from './data/lessons'
 
-const assetPathPrefix =
-  'https://www.figma.com/api/mcp/asset/a4c3ae12-9379-4020-bb91-c63454009f31'
-
-const plantImage = `${assetPathPrefix}/29ba9.svg`
-const arrowImage = `${assetPathPrefix}/af9b2.svg`
+// ВАШ росток с главного экрана, экспортированный из Figma → src/assets/welcome-plant.svg
+import plantImage from './assets/welcome-plant.svg'
 
 function Welcome({ onStart }) {
   return (
     <main className="welcome">
-      <p className="logo">Lingorra.</p>
+      <p className="logo">Lingurra.</p>
 
       <div className="title">
         <p className="title-main">Learn English.</p>
@@ -31,23 +28,20 @@ function Welcome({ onStart }) {
         <img src={plantImage} alt="" />
       </div>
 
-      <p className="description">
-        Your journey starts here
-      </p>
+      <p className="description">Your journey starts here</p>
 
-      <button
-        className="start-button"
-        onClick={onStart}
-      >
-        <p className="start-button-text">
-          Start your journey
-        </p>
+      <button className="start-button" onClick={onStart}>
+        <p className="start-button-text">Start your journey</p>
 
-        <img
-          className="arrow"
-          src={arrowImage}
-          alt=""
-        />
+        <svg className="arrow" width="21" height="18" viewBox="0 0 21 18" fill="none">
+          <path
+            d="M1 9H20M12.5 1L20 9L12.5 17"
+            stroke="#F5F0E7"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </button>
 
       <div className="bottom-info">
@@ -61,62 +55,55 @@ function Welcome({ onStart }) {
 
 function App() {
   const [screen, setScreen] = useState(1)
-  const [level, setLevel] = useState(null)
+  const [startLevel, setStartLevel] = useState(null) // 1 / 2 / 3 с экрана выбора
+  const [level, setLevel] = useState(null)           // результат теста (A1…C1)
+  const [results, setResults] = useState([])         // ответы теста
 
-  // 1 — Welcome
   if (screen === 1) {
-    return (
-      <Welcome
-        onStart={() => setScreen(2)}
-      />
-    )
+    return <Welcome onStart={() => setScreen(2)} />
   }
 
-  // 2 — Choose your starting point
   if (screen === 2) {
     return (
       <Level
         onBack={() => setScreen(1)}
-        onContinue={() => setScreen(3)}
+        onContinue={(chosen) => {
+          setStartLevel(chosen)
+          setScreen(3)
+        }}
       />
     )
   }
 
-  // 3 — Test intro
   if (screen === 3) {
-    return (
-      <Test
-        onBack={() => setScreen(2)}
-        onStart={() => setScreen(4)}
-      />
-    )
+    return <Test onBack={() => setScreen(2)} onStart={() => setScreen(4)} />
   }
 
-  // 4 — Level Test (30 questions, computes the level)
   if (screen === 4) {
     return (
       <LevelTest
+        startLevel={startLevel}
         onBack={() => setScreen(3)}
-        onContinue={(computedLevel) => {
+        onContinue={(computedLevel, extra) => {
           setLevel(computedLevel)
+          setResults(extra.results)
           setScreen(5)
         }}
       />
     )
   }
 
-  // 5 — Your level result
   if (screen === 5) {
     return (
       <YourLevel
         level={level}
+        results={results}
         onBack={() => setScreen(4)}
         onStart={() => setScreen(6)}
       />
     )
   }
 
-  // 6 — Start lesson (lesson picked automatically based on level)
   if (screen === 6) {
     return (
       <StartLesson
@@ -127,7 +114,6 @@ function App() {
     )
   }
 
-  // 7 — Lesson task
   if (screen === 7) {
     return (
       <LessonTask
@@ -138,13 +124,7 @@ function App() {
     )
   }
 
-  // 8 — Goodbye
-  return (
-    <Goodbye
-      onBack={() => setScreen(7)}
-      onRestart={() => setScreen(1)}
-    />
-  )
+  return <Goodbye onBack={() => setScreen(7)} onRestart={() => setScreen(1)} />
 }
 
 export default App

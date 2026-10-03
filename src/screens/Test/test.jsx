@@ -1,5 +1,7 @@
 import './test.css'
-import { Flower } from '../../components/illustrations'
+
+// ВАШ большой росток с экрана "Let's find your level", экспортированный из Figma → src/assets/test-plant.svg
+import flowerImage from '../../assets/test-plant.svg'
 
 function Test({ onBack, onStart }) {
   return (
@@ -8,12 +10,7 @@ function Test({ onBack, onStart }) {
       <header className="test-header">
         <div className="test-logo">Lingurra.</div>
 
-        <button
-          type="button"
-          className="test-back"
-          onClick={onBack}
-          aria-label="Go back"
-        >
+        <button type="button" className="test-back" onClick={onBack} aria-label="Go back">
           ←
         </button>
       </header>
@@ -35,7 +32,7 @@ function Test({ onBack, onStart }) {
       </p>
 
       <div className="test-flower">
-        <Flower />
+        <img src={flowerImage} alt="" />
       </div>
 
       <button type="button" className="test-start-button" onClick={onStart}>

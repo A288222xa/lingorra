@@ -5,7 +5,7 @@ function Goodbye({ onBack, onRestart }) {
     <main className="goodbye-screen">
 
       <div className="goodbye-logo">
-        Lingorra.
+        Lingurra.
       </div>
 
       <button
@@ -26,11 +26,11 @@ function Goodbye({ onBack, onRestart }) {
       <p className="goodbye-description">
         You've finished your first step
         <br />
-        with Lingorra.
+        with Lingurra.
       </p>
 
       <p className="goodbye-soon">
-        The main Lingorra bot
+        The main Lingurra bot
         <br />
         is coming soon.
       </p>
