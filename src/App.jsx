@@ -2,13 +2,13 @@ import { useState } from 'react'
 
 import './App.css'
 
-import Level from './screens/Level/level'
-import Test from './screens/Test/test'
-import LevelTest from './screens/Leveltest/leveltest'
-import YourLevel from './screens/YourLevel/yourLevel'
-import StartLesson from './screens/StartLesson/startLesson'
-import LessonTask from './screens/LessonTask/LessonTask'
-import Goodbye from './screens/Goodbye/Goodbye'
+   import Level from "./screens/Level/level";
+   import Test from "./screens/Test/test";
+   import LevelTest from "./screens/LevelTest/levelTest";
+   import YourLevel from "./screens/YourLevel/yourLevel";
+   import StartLesson from "./screens/StartLesson/startLesson";
+   import LessonTask from "./screens/LessonTask/LessonTask";
+   import Goodbye from "./screens/Goodbye/Goodbye";
 import { getLessonForLevel } from './data/lessons'
 
 // ВАШ росток с главного экрана, экспортированный из Figma → src/assets/welcome-plant.svg
