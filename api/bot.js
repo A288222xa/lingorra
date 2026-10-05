@@ -1,5 +1,5 @@
-const TOKEN = process.env.BOT_TOKEN || process.env.TELEGRAM_BOT_TOKEN;
-const SECRET = process.env.WEBHOOK_SECRET;
+const TOKEN = process.env.AAGLhGyuzBWQ5UgwzGiyWBvgcXmkyVQbbt0;
+const SECRET = process.env.lng_9x2KqPz7Vw4tR8;
 const WEB_APP_URL = process.env.WEB_APP_URL || 'https://lingorra17.vercel.app'; // https://ТВОЙ-ПРОЕКТ.vercel.app/
 const WELCOME_IMAGE = ''; // HTTPS-ссылка на картинку 640×360, можно пусто
 
