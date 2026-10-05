@@ -47,7 +47,8 @@ export default async function handler(req, res) {
 
   // проверка секрета вебхука
   if (req.headers['x-telegram-bot-api-secret-token'] !== SECRET) {
-    return res.status(403).send('forbidden');
+   console.log('secret defined:', Boolean(SECRET), 'header present:', Boolean(req.headers['x-telegram-bot-api-secret-token']));
+return res.status(403).send('forbidden');
   }
 
   const message = req.body?.message;
