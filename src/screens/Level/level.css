@@ -222,16 +222,3 @@
   height: 21px;
   object-fit: contain;
 }
-
-/* HOME INDICATOR */
-
-.level-home-indicator {
-  position: absolute;
-  left: 50%;
-  bottom: 8px;
-  width: 134px;
-  height: 5px;
-  transform: translateX(-50%);
-  border-radius: 100px;
-  background: #000;
-}
