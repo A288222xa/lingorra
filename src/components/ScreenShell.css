@@ -37,19 +37,3 @@
   cursor: pointer;
 }
 
-.screen__home-indicator {
-  position: absolute;
-  bottom: 8px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.screen__home-indicator div {
-  width: 134px;
-  height: 5px;
-  border-radius: 3px;
-  background: var(--text);
-  opacity: 0.85;
-}
