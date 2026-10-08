@@ -9,16 +9,21 @@
   overflow: hidden;
 }
 
-.screen__header {
-  position: relative;
-  padding-top: 55px;
-  text-align: center;
-}
-
 .screen__logo {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  right: 0;
+  text-align: center;
   font-size: 21px;
+  line-height: 29px;
   font-weight: 300;
   letter-spacing: 0.63px;
+}
+
+.screen__header {
+  position: relative;
+  height: 84px;
 }
 
 .screen__back {
